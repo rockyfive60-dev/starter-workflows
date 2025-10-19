@@ -15,10 +15,28 @@ https://github.com/actions/.github/blob/main/CODE_OF_CONDUCT.md). By participati
 
 Before merging a new workflow, the following requirements need to be met:
 
-- Should be as simple as is needed for the service.
-- There are many programming languages and tools out there. Right now we don't have a page that allows for a really large number of workflows, so we do have to be a little choosy about what we accept. Less popular tools or languages might not be accepted.
-- Automation and CI workflows should not send data to any 3rd party service except for the purposes of installing dependencies.
-- Automation and CI workflows cannot be dependent on a paid service or product.
-- We require that Actions outside of the `actions` organization be pinned to a specific SHA.
 
 Thank you
+### Validate templates locally
+
+Before opening a PR, validate all workflow templates and their metadata locally.
+
+From the repository root:
+
+```bash
+cd script/validate-data
+npm ci
+npx ts-node index.ts
+```
+
+If the script prints "Found no workflows with errors!" everything validated successfully. If it reports errors, please fix them before opening a PR.
+
+Quick (one-line) commands from the repository root:
+
+```bash
+# using npm script
+npm run validate
+
+# using make
+make validate
+```

@@ -4,6 +4,8 @@
   <img src="https://avatars0.githubusercontent.com/u/44036562?s=100&v=4"/> 
 </p>
 
+[![Validate templates](https://github.com/AIC-HMV/starter-workflows/actions/workflows/validate-templates.yml/badge.svg?branch=main)](https://github.com/AIC-HMV/starter-workflows/actions/workflows/validate-templates.yml)
+
 ## Starter Workflows
 
 These are the workflow files for helping people get started with GitHub Actions.  They're presented whenever you start to create a new GitHub Actions workflow.

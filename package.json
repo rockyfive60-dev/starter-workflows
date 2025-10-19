@@ -1,0 +1,7 @@
+{
+  "name": "starter-workflows",
+  "private": true,
+  "scripts": {
+    "validate": "cd script/validate-data && npm ci && npx ts-node index.ts"
+  }
+}

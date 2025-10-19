@@ -1,0 +1,33 @@
+name: Validate starter workflows
+
+on:
+  pull_request:
+    paths:
+      - '**/*.yml'
+      - '**/*.yaml'
+      - 'script/validate-data/**'
+      - 'CONTRIBUTING.md'
+  push:
+    branches:
+      - main
+
+jobs:
+  validate:
+    name: Validate templates
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install validator dependencies
+        working-directory: script/validate-data
+        run: npm ci
+
+      - name: Run validation script
+        working-directory: script/validate-data
+        run: npx ts-node index.ts
